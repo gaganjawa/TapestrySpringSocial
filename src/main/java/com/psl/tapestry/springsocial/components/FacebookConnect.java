@@ -42,7 +42,11 @@ public class FacebookConnect extends AbstractComponentEventLink {
 	 * This parameter defines OAuth2 application scope.
 	 */
 	@Parameter(defaultPrefix = BindingConstants.LITERAL)
+<<<<<<< HEAD
 	private String scope = "public_profile,email";
+=======
+	private String scope;
+>>>>>>> 14571411296bf3dff8a6a8475fababe3d1c9c4e4
 
 	@Inject
 	private ComponentResources resources;

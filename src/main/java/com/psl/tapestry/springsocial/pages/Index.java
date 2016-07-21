@@ -66,18 +66,29 @@ public class Index {
 	@OnEvent(value = EventConstants.SUCCESS, component = "facebook")
 	void facebookConnected(final String accessToken) {
 		final User profile = facebookService.getApi(accessToken).userOperations().getUserProfile();
+<<<<<<< HEAD
 		System.out.println("Profile "+profile);
+=======
+		System.out.println(profile);
+>>>>>>> 14571411296bf3dff8a6a8475fababe3d1c9c4e4
 		
 		errorMessage = "No Error";
 		socialProfile = new HashMap<String, String>();
 		socialProfile.put("id", profile.getId());
 		socialProfile.put("name", profile.getName());
 		socialProfile.put("gender", profile.getGender());
+<<<<<<< HEAD
 		socialProfile.put("email", profile.getEmail());
 		socialProfile.put("locale", String.valueOf(profile.getLocale()));
 		socialProfile.put("link", profile.getLink());
 		
 		System.out.println("Social Profile: "+socialProfile);
+=======
+		socialProfile.put("locale", String.valueOf(profile.getLocale()));
+		socialProfile.put("link", profile.getLink());
+		
+		System.out.println(socialProfile);
+>>>>>>> 14571411296bf3dff8a6a8475fababe3d1c9c4e4
 	}
 
 	@OnEvent(value = EventConstants.FAILURE, component = "facebook")

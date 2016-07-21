@@ -79,20 +79,29 @@
 						<td>${socialProfile.get('gender')}</td>
 					</tr>
 					<tr>
+<<<<<<< HEAD
 						<th align="right">${message:label.email}:</th>
 						<td width="5" />
 						<td>${socialProfile.get('email')}</td>
 					</tr>
 					<tr>
+=======
+>>>>>>> 14571411296bf3dff8a6a8475fababe3d1c9c4e4
 						<th align="right">${message:label.locale}:</th>
 						<td width="5" />
 						<td>${socialProfile.get('locale')}</td>
 					</tr>
 				</tbody>
 			</table>
+<<<<<<< HEAD
 			<p:else>
 				${errorMessage}
 			</p:else>
+=======
+			<!-- <p:else>
+				${errorMessage}
+			</p:else> -->
+>>>>>>> 14571411296bf3dff8a6a8475fababe3d1c9c4e4
 		</t:if>
 	</div>
 </body>
