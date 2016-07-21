@@ -1,0 +1,94 @@
+<html t:type="layout" title="SpringSocial2.0 Index"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+	<!-- Most of the page content, including <head>, <body>, etc. tags, comes 
+		from Layout.tml -->
+
+<body>
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1338969106131674',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+	<!-- Main hero unit for a primary marketing message or call to action -->
+	<div class="hero-unit">
+		<p>
+			<img src="${asset:context:images/tapestry.png}" alt="${message:greeting}"
+				title="${message:greeting}" />
+		</p>
+		<h3>${message:greeting}</h3>
+		<p>
+			The current time is:
+			<strong>${currentTime}</strong>
+		</p>
+		<p>
+			This is a template for a simple marketing or informational website.
+			It
+			includes a large callout called
+			the hero unit and three supporting
+			pieces of content. Use it as a
+			starting point to create something
+			more
+			unique.
+		</p>
+		<p>
+			<t:actionlink t:id="learnmore" class="btn btn-primary btn-large">Learn
+				more &raquo;
+			</t:actionlink>
+		</p>
+	</div>
+
+	<H1>Facebook Register</H1>
+	<p class="btn">
+		<t:facebookconnect t:id="facebook">FACEBOOK</t:facebookconnect>
+	</p>
+
+	<div class="column s-2">
+		<t:if test="socialProfile">
+			<table>
+				<tbody>
+					<tr>
+						<th align="right">${message:label.id}:</th>
+						<td width="5" />
+						<td>
+							<a href="${socialProfile.get('link')}">${socialProfile.get('id')}</a>
+						</td>
+					</tr>
+					<tr>
+						<th align="right">${message:label.name}:</th>
+						<td width="5" />
+						<td>${socialProfile.get('name')}</td>
+					</tr>
+					<tr>
+						<th align="right">${message:label.gender}:</th>
+						<td width="5" />
+						<td>${socialProfile.get('gender')}</td>
+					</tr>
+					<tr>
+						<th align="right">${message:label.locale}:</th>
+						<td width="5" />
+						<td>${socialProfile.get('locale')}</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- <p:else>
+				${errorMessage}
+			</p:else> -->
+		</t:if>
+	</div>
+</body>
+</html>
